@@ -10,7 +10,8 @@ r: run
 run: fmt ## Run the program, alias: r
 	@echo "Initializing swagger documentation"
 	swag init --output swagger --parseDependency --parseDepth=4
-	HTTP_SERVE_ADDRESS=0.0.0.0:8080 \
+	HTTP_SERVER_ADDRESS=0.0.0.0:8080 \
+	DATABASE_CONNECTION_URL="host=localhost port=5432 user=postgres dbname=nsx_api password=changeme" \
 		go run main.go
 
 dr: docker.run

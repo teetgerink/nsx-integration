@@ -7,6 +7,6 @@ services:
     volumes:
       - ./db-create.sql:/docker-entrypoint-initdb.d/db-create.sql
     environment:
-      POSTGRES_PASSWORD: rootroot
+      POSTGRES_PASSWORD: changeme
     ports:
       - "5432:5432"

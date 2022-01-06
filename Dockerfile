@@ -71,5 +71,5 @@ COPY --from=builder /go/bin/nsx-api /go/bin/nsx-api
 # Use an unprivileged user.
 USER appuser:appuser
 
-# Run the security-api binary.
+# Run nsx-api binary.
 ENTRYPOINT ["/go/bin/nsx-api"]

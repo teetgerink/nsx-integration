@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  database:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - ./db-create.sql:/docker-entrypoint-initdb.d/db-create.sql
+    environment:
+      POSTGRES_PASSWORD: rootroot
+    ports:
+      - "5432:5432"
